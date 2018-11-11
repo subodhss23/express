@@ -1,11 +1,15 @@
-// express.Router()
-
 const express = require('express');
-const app = express();
-const helmet = require('helmet');
-app.use(helmet());
-app.use(expres.json());
-app.use(express.static('public'));
+let router = express.Router();
 
+//instead of:
+// app.get(...)
+// we are doing:
+// router.get(...)
 
-app.listen(3000);
+router.get('/', (req, res, next) => {
+    res.json({
+        msg: "This shit is working"
+    })
+})
+
+module.exports = router;
