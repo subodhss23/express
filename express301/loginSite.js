@@ -94,6 +94,10 @@ app.get('/story/:storyId', (req, res, next) =>{
 //     res.send('<h1>Story 3</h1>')
 // });
 
+app.get('/statement',(req, res, next) =>{
+    res.sendFile(path.join(__dirname, 'userStatements/BankStatementChequing.png'))
+})
+
 app.get('/logout', (req, res, next) =>{
     //res.clearCookie takes 1 arg:
     //1, Cookie to clear (by name)
